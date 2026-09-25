@@ -16,7 +16,7 @@ positionMoyenne calcule la place moyenne d'un pilote en se basant sur les résul
 
 03-js/                       maillon 3 — trierParPoints compare d'abord les points en ordre décroissant, puis les victoires en cas d'égalité grâce à la méthode native sort().
 remplirTableau cible le tableau avec document.getElementById() puis le réinitialise en vidant son innerHTML. La boucle forEach crée ensuite chaque ligne via document.createElement("tr") et lui assigne directement son identifiant avec la méthode setAttribute('data-nom'), intègre la ligne au document final avec appendChild().
-
+marquerPodium cible l'ensemble des lignes générées dans le tableau en utilisant querySelectorAll('tr') pour modifier leur apparence globale. Une boucle forEach exploite l'index d'itération de chaque élément pour identifier facilement le top 3. Selon la position, la méthode classList.add("podium") applique le style visuel aux trois premiers (pilotes sur le podium), tandis que classList.remove("podium") s'assure de nettoyer les autres lignes.
 secours/                     résultats de référence, en cas de blocage
 extensions/E1 à E4           les extensions et leurs tests
 formateur/                   corrigés, grille, générateur — À RETIRER avant distribution
