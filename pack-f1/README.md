@@ -9,7 +9,8 @@ donnees/resultats.csv        l'export brut du championnat
 La fonction lire_resultats lit un CSV de résultats de course en ignorant la première ligne et en s'adaptant automatiquement au séparateur. Elle extrait et nettoie les infos pour chaque pilote (en forçant la position à 0 en cas d'abandon et en convertissant le chrono). Au final, elle te renvoie toutes ces données bien rangées dans une liste de dictionnaires prête à être utilisée en Python.
 La fonction ecrire_courses_propres génère un fichier CSV propre en y insérant d'abord l'en-tête. Ensuite, elle boucle sur tes données pour écrire chaque ligne avec f.write(), en utilisant les f-strings pour formater le chrono à 3 décimales.
 
-02-java/src/                 maillon 2 — Classement.java à compléter
+02-java/src/                 maillon 2 — public static int pointsPourPosition vérifie si le pilote finit dans le top 10 pour aller récupérer le bon score dans le tableau BAREME, sinon elle renvoie simplement zéro.
+
 03-js/                       maillon 3 — app.js à compléter, index.html à ouvrir
 secours/                     résultats de référence, en cas de blocage
 extensions/E1 à E4           les extensions et leurs tests
