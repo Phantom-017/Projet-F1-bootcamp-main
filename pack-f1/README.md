@@ -15,6 +15,7 @@ classementEcuries regroupe cette fois les scores dans la HashMap en utilisant le
 positionMoyenne calcule la place moyenne d'un pilote en se basant sur les résultats des courses avec une boucle for. Une condition if filtre les abandons en ignorant les valeurs de position égales à 0 pour ne garder que les courses terminées. Le calcul final exploite la méthode Math.round() (multiplié puis divisé par 100.0) afin de forcer l'arrondi du résultat à deux décimales.
 
 03-js/                       maillon 3 — trierParPoints compare d'abord les points en ordre décroissant, puis les victoires en cas d'égalité grâce à la méthode native sort().
+remplirTableau cible le tableau avec document.getElementById() puis le réinitialise en vidant son innerHTML. La boucle forEach crée ensuite chaque ligne via document.createElement("tr") et lui assigne directement son identifiant avec la méthode setAttribute('data-nom'), intègre la ligne au document final avec appendChild().
 
 secours/                     résultats de référence, en cas de blocage
 extensions/E1 à E4           les extensions et leurs tests
