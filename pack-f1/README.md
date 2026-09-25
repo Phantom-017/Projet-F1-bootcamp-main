@@ -5,7 +5,8 @@ Pack complet : énoncé, données, squelettes, tests, extensions et corrigés.
 ```
 ENONCE.md                    l'énoncé étudiant (à lire en premier)
 donnees/resultats.csv        l'export brut du championnat
-01-python/ingestion.ipynb    maillon 1 — à compléter
+01-python/ingestion.ipynb    maillon 1 — On vérifie si ce qui a été rempli correspond pas au paramètre texte ou pas au paramètre texte suivi de strip qui enlève les espaces et caractères invisibles et dans ce cas là on retourne None. On sépare les minutes et les secondes avec texte.split(':'), définissons une variable pour convertir en un total de secondes avec int pour les minutes et float pour les secondes afin d'arrondir à 3 décimales suivi de round(total_secondes, 3) en return. On retourne None dans le cas d'une ValueError ou Exception.
+
 02-java/src/                 maillon 2 — Classement.java à compléter
 03-js/                       maillon 3 — app.js à compléter, index.html à ouvrir
 secours/                     résultats de référence, en cas de blocage
