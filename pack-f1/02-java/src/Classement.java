@@ -63,8 +63,28 @@ public class Classement {
     // 3. classementEcuries(pilotes) : additionne les points, victoires et
     //    2e places des pilotes de chaque écurie. Même ordre de tri.
     public static List<Resultat> classementEcuries(List<Resultat> pilotes) {
-        // À COMPLÉTER
-        return null;
+        Map<String, Resultat> ecuries = new HashMap<>();
+
+        for (Resultat p : pilotes) {
+            String nomEcurie = p.ecurie;
+            // Une écurie n'a pas d'écurie parente, on passe une chaîne vide
+            ecuries.putIfAbsent(nomEcurie, new Resultat(nomEcurie, ""));
+            
+            Resultat res = ecuries.get(nomEcurie);
+            res.points += p.points;
+            res.victoires += p.victoires;
+            res.deuxiemes += p.deuxiemes;
+        }
+
+        List<Resultat> classement = new ArrayList<>(ecuries.values());
+        classement.sort((r1, r2) -> {
+            if (r1.points != r2.points) return Integer.compare(r2.points, r1.points);
+            if (r1.victoires != r2.victoires) return Integer.compare(r2.victoires, r1.victoires);
+            if (r1.deuxiemes != r2.deuxiemes) return Integer.compare(r2.deuxiemes, r1.deuxiemes);
+            return r1.nom.compareTo(r2.nom);
+        });
+
+        return classement;
     }
 
     // 4. positionMoyenne(lignes, pilote) : moyenne des positions de ce pilote,

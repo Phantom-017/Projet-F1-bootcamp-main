@@ -11,7 +11,7 @@ La fonction ecrire_courses_propres génère un fichier CSV propre en y insérant
 
 02-java/src/                 maillon 2 — public static int pointsPourPosition vérifie si le pilote finit dans le top 10 pour aller récupérer le bon score dans le tableau BAREME, sinon elle renvoie simplement zéro.
 classementPilotes utilise une HashMap pour regrouper les données en associant le nom de chaque pilote à un objet Resultat. Une boucle for cumule les points et les podiums de la saison. Les valeurs sont ensuite transférées dans une ArrayList pour être triées avec la méthode sort(). Une expression lambda sert de comparateur sur mesure pour trier par points décroissants, puis par victoires, deuxièmes places, et enfin par ordre alphabétique.
-
+classementEcuries regroupe cette fois les scores dans la HashMap en utilisant le nom de l'écurie comme clé. Une boucle additionne les points et victoires des pilotes appartenant à la même équipe. La liste finale utilise exactement la même méthode sort() avec une expression similaire pour garantir un ordre de tri identique au classement individuel.
 03-js/                       maillon 3 — app.js à compléter, index.html à ouvrir
 secours/                     résultats de référence, en cas de blocage
 extensions/E1 à E4           les extensions et leurs tests
