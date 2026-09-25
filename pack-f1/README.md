@@ -10,6 +10,7 @@ La fonction lire_resultats lit un CSV de résultats de course en ignorant la pre
 La fonction ecrire_courses_propres génère un fichier CSV propre en y insérant d'abord l'en-tête. Ensuite, elle boucle sur tes données pour écrire chaque ligne avec f.write(), en utilisant les f-strings pour formater le chrono à 3 décimales.
 
 02-java/src/                 maillon 2 — public static int pointsPourPosition vérifie si le pilote finit dans le top 10 pour aller récupérer le bon score dans le tableau BAREME, sinon elle renvoie simplement zéro.
+classementPilotes utilise une HashMap pour regrouper les données en associant le nom de chaque pilote à un objet Resultat. Une boucle for cumule les points et les podiums de la saison. Les valeurs sont ensuite transférées dans une ArrayList pour être triées avec la méthode sort(). Une expression lambda sert de comparateur sur mesure pour trier par points décroissants, puis par victoires, deuxièmes places, et enfin par ordre alphabétique.
 
 03-js/                       maillon 3 — app.js à compléter, index.html à ouvrir
 secours/                     résultats de référence, en cas de blocage

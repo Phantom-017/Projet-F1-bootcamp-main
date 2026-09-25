@@ -7,7 +7,10 @@
        java -Dstdout.encoding=UTF-8 -cp out Main      (la production)
    ========================================================================= */
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Classement {
 
@@ -28,8 +31,33 @@ public class Classement {
     //    ses victoires (position 1) et ses 2e places, trié par :
     //    points décroissants, puis victoires, puis 2e places, puis nom (A→Z).
     public static List<Resultat> classementPilotes(List<Ligne> lignes) {
-        // À COMPLÉTER
-        return null;
+        Map<String, Resultat> pilotes = new HashMap<>();
+
+        for (Ligne ligne : lignes) {
+            String nom = ligne.pilote();
+            // Le constructeur Resultat attend le nom et l'écurie
+            pilotes.putIfAbsent(nom, new Resultat(nom, ligne.ecurie()));
+            
+            Resultat res = pilotes.get(nom);
+            int pos = ligne.position();
+            
+            res.points += pointsPourPosition(pos);
+            if (pos == 1) {
+                res.victoires++;
+            } else if (pos == 2) {
+                res.deuxiemes++;
+            }
+        }
+
+        List<Resultat> classement = new ArrayList<>(pilotes.values());
+        classement.sort((r1, r2) -> {
+            if (r1.points != r2.points) return Integer.compare(r2.points, r1.points);
+            if (r1.victoires != r2.victoires) return Integer.compare(r2.victoires, r1.victoires);
+            if (r1.deuxiemes != r2.deuxiemes) return Integer.compare(r2.deuxiemes, r1.deuxiemes);
+            return r1.nom.compareTo(r2.nom);
+        });
+
+        return classement;
     }
 
     // 3. classementEcuries(pilotes) : additionne les points, victoires et
